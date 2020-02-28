@@ -1769,7 +1769,7 @@ static void rd_kafka_stats_emit_all (rd_kafka_t *rk) {
         rd_kafka_op_set_prio(rko, RD_KAFKA_PRIO_HIGH);
 	rko->rko_u.stats.json = st->buf;
 	rko->rko_u.stats.json_len = st->of;
-	rd_kafka_q_enq(rk->rk_rep, rko);
+	rd_kafka_q_reenq(rk->rk_rep, rko);
 }
 
 
